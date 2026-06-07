@@ -4,4 +4,13 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
 	plugins: [react(), cloudflare()],
+	server: {
+		port: 5173,
+		strictPort: false,
+	},
+	build: {
+		target: "ES2020",
+		minify: "terser",
+		sourcemap: false,
+	},
 });
